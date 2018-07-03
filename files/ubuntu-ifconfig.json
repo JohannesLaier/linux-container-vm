@@ -1,0 +1,13 @@
+{
+	"from":"ubuntu",
+	"arch":"amd64",
+	"dist":"trusty",
+	"cmd":[
+		"apt-get update",
+		"apt-get install net-tools -y",
+		"ifconfig"
+	],
+	"add":[
+		{"from":"/home/johannes/rub/files/test.txt", "to":"/tmp/abc.txt"}
+	]
+}
