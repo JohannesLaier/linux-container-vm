@@ -27,7 +27,7 @@ class Image
     if @options['from'] == "ubuntu"
       FileUtils.mkdir_p path
       bootstrap = Bootstrap.new(@options['from'], @options['dist'], @options['arch'], self)
-      #bootstrap.run
+      bootstrap.run
     elsif self.class.get_all().include? @options['from']
       FileUtils.cp_r($PATH_IMAGES + @options['from'], $PATH_IMAGES + @name);
     else
@@ -45,7 +45,7 @@ class Image
     if @options['cmd']
       chroot = Chroot.new(self)
       @options['cmd'].each do |cmd|
-        #chroot.exec(cmd)
+        chroot.exec(cmd)
       end
     end
   end
